@@ -44,7 +44,7 @@ if(queryPermission('access_globals', 'read', 'dataLayer')) {
 
 if (typeof dataLayerCopy == 'object') {
   let nullUndefinedOrEmptyPaths = findNullUndefinedOrEmptyPaths(dataLayerCopy,[]);
-  if (nullUndefinedOrEmptyPaths.length > 1) {
+  if (nullUndefinedOrEmptyPaths.length > 0) {
     return nullUndefinedOrEmptyPaths;
   }
   return false;
@@ -60,7 +60,9 @@ function findNullUndefinedOrEmptyPaths(obj, path) {
     if (value === null || value === undefined || value === '') {
       nullUndefinedOrEmptyPaths.push(newPath.join('.'));
     } else if (typeof value === 'object' && value !== null) {
-      nullUndefinedOrEmptyPaths.push(findNullUndefinedOrEmptyPaths(value, newPath));
+      findNullUndefinedOrEmptyPaths(value, newPath).forEach(el => {
+            if(el) nullUndefinedOrEmptyPaths.push(el);
+        });
     }
   }
   return nullUndefinedOrEmptyPaths;
@@ -174,6 +176,5 @@ setup: |-
 
 ___NOTES___
 
-Created on 12/2/2024, 11:23:39 PM
-
+Created on 12/3/2024, 9:50:49 PM
 
