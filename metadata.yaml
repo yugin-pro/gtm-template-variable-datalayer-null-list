@@ -15,5 +15,5 @@
 homepage: "https://ecommerce-data-analytics.com/google-tag-manager-gtm/create-custom-variable-template.html"
 documentation: "https://ecommerce-data-analytics.com/google-tag-manager-gtm/gtm-variable-template-validate-datalayer.html"
 versions:
-  - sha: 
+  - sha: acdefb29734d248233eb4637f6b77031e89764a3
     changeNotes: Initial
