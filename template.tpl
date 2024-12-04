@@ -38,7 +38,7 @@ let dataLayerCopy;
 if(queryPermission('access_globals', 'read', 'dataLayer')) {
   dataLayerCopy = copyFromWindow('dataLayer');
 } else {
-  data.gtmOnFailure();
+  return 'dataLayer is not accessible. check permissions.';
 }
 
 
@@ -176,5 +176,4 @@ setup: |-
 
 ___NOTES___
 
-Created on 12/3/2024, 9:50:49 PM
-
+Created on 12/4/2024, 9:58:05 PM
